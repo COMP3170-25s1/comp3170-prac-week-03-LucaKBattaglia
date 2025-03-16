@@ -1,4 +1,4 @@
-package comp3170.week3;
+//package comp3170.week3;
 //
 //import static org.lwjgl.opengl.GL11.glViewport;
 //import static org.lwjgl.opengl.GL41.*;
@@ -79,7 +79,7 @@ package comp3170.week3;
 //	
 //}
 
-//package comp3170.lectures.week3;
+package comp3170.week3;
 
 import static org.lwjgl.opengl.GL15.GL_COLOR_BUFFER_BIT;
 import static org.lwjgl.opengl.GL15.glClear;
@@ -98,11 +98,11 @@ import comp3170.Window;
 
 public class Week3 implements IWindowListener{
 	
-	private int screenWidth = 1000;
-	private int screenHeight = 1000;
+	private int screenWidth = 800;
+	private int screenHeight = 800;
 	private Vector4f clearColour = new Vector4f(0.0f, 0.0f, 0.5f, 1.0f);
 	
-	final private File DIRECTORY = new File("src/comp3170/lectures/week3/shaders");
+	final private File DIRECTORY = new File("src/comp3170/week3/shaders");
 	
 	private Scene scene;
 	private long oldTime;

@@ -41,10 +41,10 @@ public class House {
 	
 	// private Vector3f colour = new Vector3f(1.0f, 0.7f, 1.0f); // LILAC - No longer used now we're doing vertex colours
 	
-	final private Vector3f OFFSET = new Vector3f(0.25f,0.0f, 0.0f);
-	final private float MOVEMENT_SPEED = 1f;
-	final private float SCALE_RATE = 2f;
-	final private float ROTATION_RATE = TAU/12;
+	final private Vector3f OFFSET = new Vector3f(0.5f,0.0f, 0.0f);
+	final private float MOVEMENT_SPEED = 10f;
+	final private float SCALE_RATE = 0.125f;
+	final private float ROTATION_RATE = TAU/3;
 	
 	public House() {
 		
@@ -54,22 +54,35 @@ public class House {
 		// vertices as (x,y) pairs
 		
 		// @formatter:off
+//original demo values & indices of house/pentagon shape 		
+//		vertices = new Vector4f[] {
+//				new Vector4f(-0.8f, -0.8f, 0.0f, 1.0f), // P0
+//				new Vector4f(0.8f, -0.8f, 0.0f, 1.0f),  // P1
+//				
+//				new Vector4f(0.8f, 0.4f, 0.0f, 1.0f),   // P2
+//				new Vector4f(-0.8f, 0.4f, 0.0f, 1.0f),  // P3
+//				new Vector4f(0.f, 0.8f, 0.0f, 1.0f),    // P4	
+//			
+//		};
+//		
+//		indices = new int[] {
+//				0, 1, 3, // Tri1
+//				1, 2, 3, // Tri2
+//				2, 4, 3,// Tri3
+//		};
 		
 		vertices = new Vector4f[] {
-				new Vector4f(-0.8f, -0.8f, 0.0f, 1.0f), // P0
-				new Vector4f(0.8f, -0.8f, 0.0f, 1.0f),  // P1
-				
-				new Vector4f(0.8f, 0.4f, 0.0f, 1.0f),   // P2
-				new Vector4f(-0.8f, 0.4f, 0.0f, 1.0f),  // P3
-				new Vector4f(0.f, 0.8f, 0.0f, 1.0f),    // P4	
-			
-		};
-		
-		indices = new int[] {
-				0, 1, 3, // Tri1
-				1, 2, 3, // Tri2
-				2, 4, 3,// Tri3
-		};
+			    new Vector4f( 0, 0, 0, 1),  // P0 - Center
+			    new Vector4f( 0, 1, 0, 1),  // P1 - Top
+			    new Vector4f(-1,-1, 0, 1),  // P2 - Bottom Left
+			    new Vector4f( 1,-1, 0, 1),  // P3 - Bottom Right
+			};
+
+			indices = new int[] {
+			    0, 1, 2, // Left triangle
+			    0, 1, 3, // Right triangle
+			};
+
 		
 		colours = new Vector3f[] {
 				new Vector3f(1.0f, 0.0f, 0.1f),
